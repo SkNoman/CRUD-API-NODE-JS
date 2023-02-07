@@ -13,6 +13,8 @@ router.post('/login',loginController.loginUser)
 router.post('/insert',auth,contoller.insertCar)
 //GET CAR LIST
 router.get('/get-allcars',auth,contoller.getAllCars)
+//UPDATE CAR
+router.put('/update-car',contoller.updateCars)
 
 
 module.exports=router;

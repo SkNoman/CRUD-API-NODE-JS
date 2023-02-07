@@ -26,5 +26,20 @@ module.exports = {
             console.error(error)
             return res.status(500).send('Something went wrong')
         }
+    },
+    //UPDATE CARS
+    async updateCars(req,res){
+        try{
+            const car_id = req.body.car_id
+            await db('carlist')
+            .update({
+                carName: req.body.car_name,
+                carType: req.body.car_type
+            }).where({carId: car_id})
+            let updatedData = await db('carlist').where({carId:car_id})
+            return res.status(200).json({updatedData: updatedData})
+        }catch(error){
+            console.log(error)
+        }
     }
 }
