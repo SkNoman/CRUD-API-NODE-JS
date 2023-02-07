@@ -12,7 +12,7 @@ module.exports = {
                 const token = jwt.sign({
                     phone: user_info.phone
                 },process.env.ACESSS_TOKEN_SECRET
-                ,{expiresIn:1800}) //30 min
+                ,{expiresIn:3600}) //1 HOUR
                 return res.status(200).json({token})
             }else{
                 return res.status(401).json({message: 'Invalid username or password'})

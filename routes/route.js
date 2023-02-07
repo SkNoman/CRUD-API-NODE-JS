@@ -15,6 +15,8 @@ router.post('/insert',auth,contoller.insertCar)
 router.get('/get-allcars',auth,contoller.getAllCars)
 //UPDATE CAR
 router.put('/update-car',contoller.updateCars)
+//DELETE CARS
+router.delete('/delete-cars',contoller.deleteCars)
 
 
 module.exports=router;

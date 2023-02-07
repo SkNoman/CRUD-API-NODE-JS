@@ -41,5 +41,16 @@ module.exports = {
         }catch(error){
             console.log(error)
         }
+    },
+    //DELETE CARS
+    async deleteCars(req,res){
+        try{
+            const car_id = req.body.car_id
+            await db('carlist').del().where({carId: car_id})
+            return res.status(500).send({status: 'Success', message: 'Car Deleted Successfully'})
+        }catch(error){
+            console.log(error)
+        }
     }
+    
 }

@@ -12,7 +12,7 @@ const db = require('knex')({
 })
 
 db.raw('SELECT 1').then(function(){
-    console.log(`${process.env.DB_NAME} - conected using knex`)
+    console.log(`${process.env.DB_NAME} -database is conected using knex`)
     console.groupEnd()
 })
 
