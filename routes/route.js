@@ -12,11 +12,15 @@ router.post('/login',loginController.loginUser)
 //INSERT NEW CAR
 router.post('/insert',auth,contoller.insertCar)
 //GET CAR LIST
-router.get('/get-allcars',auth,contoller.getAllCars)
+router.get('/get-allcars',contoller.getAllCars)
 //UPDATE CAR
-router.put('/update-car',contoller.updateCars)
+router.put('/update-car',auth,contoller.updateCars)
 //DELETE CARS
-router.delete('/delete-cars',contoller.deleteCars)
+router.delete('/delete-cars',auth,contoller.deleteCars)
+//REGISTER USER
+router.post('/register',contoller.registerUser)
+//GET USERS CARS LIST
+router.get('/users-cars-list',auth,contoller.getUsersCarList)
 
 
 module.exports=router;
