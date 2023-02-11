@@ -6,7 +6,7 @@ POSTMAN API COLLECTION: https://documenter.getpostman.com/view/18926616/2s935rJN
 <h1>Installation guide</h1>
 
 <h3>Required</h3><br>
-.Node js on your device
+.Node js on your device <br>
 .Git
 
 1. You need to install nodejs and its package manager npm
@@ -16,6 +16,8 @@ POSTMAN API COLLECTION: https://documenter.getpostman.com/view/18926616/2s935rJN
 5. Install application dependencies using following command
     .npm init/npm install
     .npm start
+    
+Now you are good to go with the application.
 
 
 
