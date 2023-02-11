@@ -14,7 +14,7 @@ POSTMAN API COLLECTION: https://documenter.getpostman.com/view/18926616/2s935rJN
 3. Create database, you can import demo database from root folder "test.sql"
 4. Go to application folder and open terminal
 5. Install application dependencies using following command
-    .npm init/npm install
+    .npm init/npm install <br>
     .npm start
     
 Now you are good to go with the application.
