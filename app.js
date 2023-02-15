@@ -9,15 +9,15 @@ const route = require('./routes/route')
 const PORT = process.env.PORT || 3000
 
 app.use(morgan('combined'))
-app.use(cors())
+//app.use(cors())
 app.use(express.json())
-app.use(express.urlencoded({extended: false}))
+//app.use(express.urlencoded({extended: false}))
 
 //it will increate the HTTP header security to useing helmet
-app.use(helmet())
+//app.use(helmet())
 
 //set default prefix to routing
-app.use('/api',route)
+//app.use('/api',route)
 
 app.get('/',(req,res) =>{
     console.log('Someone is hiting your server,',new Date() + "User Ip"+req.ip)
