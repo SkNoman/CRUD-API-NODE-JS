@@ -21,7 +21,18 @@ app.use(express.json())
 
 app.get('/',(req,res) =>{
     console.log('Someone is hiting your server,',new Date() + "User Ip"+req.ip)
-    res.send('Welcome, This Is A Demo Site')
+    res.send(`
+        <html>
+            <head>
+            <title>Sk Noman</title>
+            </head>
+            <body>
+                <center><p>Hello, from the other side!</p></center>
+                <h1>This is a demo website</h1>
+            </body>
+        
+        </html>
+    `)
 })
 
 app.listen(PORT, () =>{
