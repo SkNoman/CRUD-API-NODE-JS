@@ -6,7 +6,7 @@ require('dotenv').config()
 const helmet = require('helmet')
 const route = require('./routes/route')
 
-const PORT = process.env.PORT || 7777
+const PORT = process.env.PORT || 3000
 
 app.use(morgan('combined'))
 app.use(cors())
