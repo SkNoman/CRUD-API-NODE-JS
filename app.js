@@ -19,6 +19,11 @@ app.use(helmet())
 //set default prefix to routing
 app.use('/api',route)
 
+app.get('/',(req,res) =>{
+    console.log('Someone is hiting your server,',new Date() + "User Ip"+req.ip)
+    res.send('Welcome, This Is A Demo Site')
+})
+
 app.listen(PORT, () =>{
     console.log(`App is running on http://localhost:${PORT}`)
 })
