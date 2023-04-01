@@ -13,13 +13,13 @@ module.exports = {
                     phone: user_info.phone
                 },process.env.ACESSS_TOKEN_SECRET
                 ,{expiresIn:3600}) //1 HOUR
-                return res.status(200).json({token})
+                return res.status(200).json({status:200,isSuccess: true,message:'Success',token})
             }else{
-                return res.status(401).json({message: 'Invalid username or password'})
+                return res.status(200).json({status: 200,isSuccess: false,message: 'Invalid username or password'})
             }
         }catch(error){
             console.log(error)
-            return res.status(500).json({message: 'Someting went wrong'})
+            return res.status(500).json({status: 500,message: 'Someting went wrong'})
         }
     }
 }

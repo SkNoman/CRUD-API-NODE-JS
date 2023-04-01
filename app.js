@@ -5,18 +5,30 @@ const morgan = require('morgan')
 require('dotenv').config()
 const helmet = require('helmet')
 const route = require('./routes/route')
-
 const PORT = process.env.PORT || 3000
-
+app.use(cors());
 app.use(morgan('combined'))
-app.use(cors())
+app.use((req, res, next) => {
+    res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-inline';");
+    next();
+  });
+
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
-//it will increate the HTTP header security to useing helmet
+//IT WILL INCREASE  HTTP HEADER SECURITY
 app.use(helmet())
 
-//set default prefix to routing
+//STATIC FILES
+app.use(express.static('public'))
+app.use('/css',express.static(__dirname + 'public/css'))
+app.use('/js',express.static(__dirname + 'public/js'))
+//SET VIEWS
+app.set('views','./views')
+app.set('view engine', 'ejs')
+
+
+//SET DEFAULT PREFIX TO ROUTES
 app.use('/api',route)
 
 app.get('/',(req,res) =>{
@@ -24,15 +36,17 @@ app.get('/',(req,res) =>{
     res.send(`
         <html>
             <head>
-            <title>Sk Noman</title>
+            <title>Xidni Exclusive</title>
             </head>
             <body>
-                <center><p>Hello, from the other side!</p></center>
-                <h1>This is a demo website</h1>
+              <center><h1>Hello From The Other Side</h1></center>
             </body>
         
         </html>
     `)
+})
+app.get('/home', (req,res) =>{
+    res.render('index',{text:'This is Home'})
 })
 
 app.listen(PORT, () =>{

@@ -53,7 +53,7 @@ module.exports = {
     //GET ALL CAR LIST
     async getAllCars(req,res){
         try{
-            const data = await db.select().from('carlist')
+            const data = await db.select('carId','carName','carType').from('carlist').where('isActive', '=', 1);
             return res.status(200).json({carlist:data})
         }catch(error){
             console.error(error)
