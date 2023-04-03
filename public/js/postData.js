@@ -1,5 +1,5 @@
 
-function script(event){
+function postData(event){
     console.log("hello");
     event.preventDefalut();
     const form = event.target;

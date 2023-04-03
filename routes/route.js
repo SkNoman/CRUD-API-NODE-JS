@@ -9,6 +9,8 @@ router.use(express.urlencoded({ extended: false }))
 
 //LOGIN
 router.post('/login',loginController.loginUser)
+//GET MAIN MENU LIST
+router.get('/main-menu',contoller.getMainMenu)
 //INSERT NEW CAR
 router.post('/insert',auth,contoller.insertCar)
 //GET CAR LIST
@@ -21,6 +23,8 @@ router.delete('/delete-cars',auth,contoller.deleteCars)
 router.post('/register',contoller.registerUser)
 //GET USERS CARS LIST
 router.get('/users-cars-list',auth,contoller.getUsersCarList)
+//GET LOCAL DB INFO
+router.get('/local-db-info',contoller.getLocalDbInfo)
 
 
 module.exports=router;

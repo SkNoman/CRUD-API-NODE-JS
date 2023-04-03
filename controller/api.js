@@ -35,6 +35,17 @@ module.exports = {
             return res.status(500).json({status: 'Error',message: 'Something went wrong'})
         }
     },
+    //MAIN MENU LIST
+    async getMainMenu(req,res){
+        try{
+            const data = await db.select('menuId','menuTitle','menuImage').from('main_menu').where('isActive', '=',1);
+            return res.status(200).json({menus:data});
+        }catch(error){
+            console.log(error);
+            return res.status(500).send('Something went wrong');
+        }
+    },
+
     //INSERT NEW CAR
     async insertCar(req,res){
         try{
@@ -104,6 +115,15 @@ module.exports = {
             console.log(error)
             return res.status(500).json({message: 'Something went wrong'})
         }
+    },
+    async getLocalDbInfo(req,res){
+        try{
+            const data = await db.select('dbVersion').from('local_db_info')
+            return res.status(200).send(data)
+        }catch(error){
+            return res.status(500).json({message: 'Something went wrong'})
+        }
+      
     }
     
 }
