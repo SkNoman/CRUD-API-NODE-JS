@@ -10,10 +10,11 @@ POSTMAN API COLLECTION: https://documenter.getpostman.com/view/18926616/2s935rJN
 .Git
 
 1. You need to install nodejs and its package manager npm
-2. Clone git repository: https://github.com/SkNoman/CRUD-API-NODE-JS.git
-3. Create database, you can import demo database from root folder "test.sql"
+2. Need to installed Xammp Server on your machine and turned on
+3. Clone git repository: https://github.com/SkNoman/CRUD-API-NODE-JS.git
+4. Create database, you can import demo database from root folder "test.sql"
 4. Go to application folder and open terminal
-5. Install application dependencies using following command
+6. Install application dependencies using following command
     .npm init/npm install <br>
     .npm start
     
