@@ -14,7 +14,7 @@ router.get('/main-menu',contoller.getMainMenu)
 //INSERT NEW CAR
 router.post('/insert',auth,contoller.insertCar)
 //GET CAR LIST
-router.get('/get-allcars',contoller.getAllCars)
+router.get('/get-all-cars',contoller.getAllCars)
 //UPDATE CAR
 router.put('/update-car',auth,contoller.updateCars)
 //DELETE CARS
