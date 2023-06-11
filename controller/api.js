@@ -64,8 +64,14 @@ module.exports = {
     //GET ALL CAR LIST
     async getAllCars(req,res){
         try{
-            const data = await db.select('carId','carName','carType').from('carlist').where('isActive', '=', 1);
-            return res.status(200).json({carlist:data})
+            
+            const data = await db.select('carId', 'carName', 'carType')
+            .select(db.raw('COALESCE(NULLIF(carImage, ""), "https://www.shutterstock.com/image-illustration/3d-rendering-brandless-generic-concept-260nw-430847767.jpg") as carImage'))
+            .from('carlist')
+            .where('isActive', '=', 1);
+
+return res.status(200).json({ carlist: data });
+
         }catch(error){
             console.error(error)
             return res.status(500).send('Something went wrong')
